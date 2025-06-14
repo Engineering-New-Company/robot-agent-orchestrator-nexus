@@ -1,6 +1,8 @@
 
 // API response types and request interfaces
 
+import { SystemMetrics, SensorData, SystemAlert, CommandExecution } from './backend';
+
 export interface APIResponse<T = any> {
   success: boolean;
   data?: T;

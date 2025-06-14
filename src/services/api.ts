@@ -1,4 +1,3 @@
-
 // API service layer for backend communication
 
 import { APIResponse, PaginatedResponse } from '@/types/api';
@@ -42,7 +41,7 @@ class APIClient {
 
   // Robotics Systems
   async getRoboticsSystems(): Promise<PaginatedResponse<RoboticsSystem>> {
-    return this.request('/robotics-systems');
+    return this.request('/robotics-systems') as Promise<PaginatedResponse<RoboticsSystem>>;
   }
 
   async createRoboticsSystem(data: any): Promise<APIResponse<RoboticsSystem>> {
@@ -62,7 +61,7 @@ class APIClient {
   // Deployments
   async getDeployments(systemId?: string): Promise<PaginatedResponse<Deployment>> {
     const query = systemId ? `?system_id=${systemId}` : '';
-    return this.request(`/deployments${query}`);
+    return this.request(`/deployments${query}`) as Promise<PaginatedResponse<Deployment>>;
   }
 
   async createDeployment(data: any): Promise<APIResponse<Deployment>> {
@@ -79,7 +78,7 @@ class APIClient {
   // AI Models
   async getAIModels(type?: string): Promise<PaginatedResponse<AIModel>> {
     const query = type ? `?type=${type}` : '';
-    return this.request(`/ai-models${query}`);
+    return this.request(`/ai-models${query}`) as Promise<PaginatedResponse<AIModel>>;
   }
 
   async createAIModel(data: any): Promise<APIResponse<AIModel>> {
@@ -97,13 +96,13 @@ class APIClient {
   }
 
   async getTrainingJobs(): Promise<PaginatedResponse<TrainingJob>> {
-    return this.request('/training-jobs');
+    return this.request('/training-jobs') as Promise<PaginatedResponse<TrainingJob>>;
   }
 
   // Developer Pipelines
   async getPipelines(type?: string): Promise<PaginatedResponse<Pipeline>> {
     const query = type ? `?type=${type}` : '';
-    return this.request(`/pipelines${query}`);
+    return this.request(`/pipelines${query}`) as Promise<PaginatedResponse<Pipeline>>;
   }
 
   async createPipeline(data: any): Promise<APIResponse<Pipeline>> {
@@ -127,7 +126,7 @@ class APIClient {
 
   // IIoT Devices
   async getIIoTDevices(): Promise<PaginatedResponse<IIoTDevice>> {
-    return this.request('/iiot-devices');
+    return this.request('/iiot-devices') as Promise<PaginatedResponse<IIoTDevice>>;
   }
 
   async createIIoTDevice(data: any): Promise<APIResponse<IIoTDevice>> {
@@ -148,7 +147,7 @@ class APIClient {
 
   // System Monitoring
   async getSystemAlerts(): Promise<PaginatedResponse<SystemAlert>> {
-    return this.request('/alerts');
+    return this.request('/alerts') as Promise<PaginatedResponse<SystemAlert>>;
   }
 
   async resolveAlert(id: string): Promise<APIResponse<SystemAlert>> {
@@ -172,7 +171,7 @@ class APIClient {
 
   async getCommandHistory(systemId?: string): Promise<PaginatedResponse<CommandExecution>> {
     const query = systemId ? `?system_id=${systemId}` : '';
-    return this.request(`/commands${query}`);
+    return this.request(`/commands${query}`) as Promise<PaginatedResponse<CommandExecution>>;
   }
 }
 
