@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -24,6 +23,8 @@ import {
 } from "lucide-react";
 import { huggingFaceService } from '@/services/huggingface';
 import { HuggingFaceModel, HuggingFaceDataset, RoboticsModelConfig } from '@/types/huggingface';
+import InferencePlayground from '@/components/ai/InferencePlayground';
+import TrainingWorkflows from '@/components/ai/TrainingWorkflows';
 
 const HuggingFaceIntegration = () => {
   const [apiToken, setApiToken] = useState('');
@@ -197,7 +198,7 @@ const HuggingFaceIntegration = () => {
       </Card>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4 bg-slate-800/50 border border-slate-700">
+        <TabsList className="grid w-full grid-cols-5 bg-slate-800/50 border border-slate-700">
           <TabsTrigger value="models" className="data-[state=active]:bg-orange-600">
             <Brain className="w-4 h-4 mr-2" />
             Models
@@ -213,6 +214,10 @@ const HuggingFaceIntegration = () => {
           <TabsTrigger value="inference" className="data-[state=active]:bg-orange-600">
             <Play className="w-4 h-4 mr-2" />
             Inference
+          </TabsTrigger>
+          <TabsTrigger value="training" className="data-[state=active]:bg-orange-600">
+            <Settings className="w-4 h-4 mr-2" />
+            Training
           </TabsTrigger>
         </TabsList>
 
@@ -396,24 +401,14 @@ const HuggingFaceIntegration = () => {
           </div>
         </TabsContent>
 
-        {/* Inference Tab */}
+        {/* Enhanced Inference Tab */}
         <TabsContent value="inference" className="space-y-4">
-          <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Play className="w-5 h-5 text-green-400" />
-                <span>Model Inference</span>
-              </CardTitle>
-              <CardDescription>Run inference on deployed models</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center py-8">
-                <Settings className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-                <p className="text-slate-400">Inference interface coming soon</p>
-                <p className="text-sm text-slate-500 mt-2">Deploy models to enable real-time inference</p>
-              </div>
-            </CardContent>
-          </Card>
+          <InferencePlayground />
+        </TabsContent>
+
+        {/* New Training Tab */}
+        <TabsContent value="training" className="space-y-4">
+          <TrainingWorkflows />
         </TabsContent>
       </Tabs>
     </div>
