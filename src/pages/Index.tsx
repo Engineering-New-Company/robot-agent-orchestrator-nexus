@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,7 +21,8 @@ import {
   ChevronRight,
   Play,
   Pause,
-  RotateCcw
+  RotateCcw,
+  ExternalLink
 } from "lucide-react";
 
 const Index = () => {
@@ -93,6 +95,12 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
+              <Link to="/features">
+                <Button variant="outline" className="border-slate-600 hover:bg-slate-700">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Platform Features
+                </Button>
+              </Link>
               <Badge variant="outline" className="border-green-500 text-green-400">
                 <Activity className="w-3 h-3 mr-1" />
                 Systems Online
