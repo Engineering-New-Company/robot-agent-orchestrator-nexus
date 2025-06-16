@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { 
   Brain, 
   Cpu, 
@@ -109,10 +109,13 @@ const Features = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-slate-900 dark:text-white">
       {/* Navigation */}
       <div className="container mx-auto px-6 py-4">
-        <Link to="/" className="inline-flex items-center space-x-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
-          <Home className="w-4 h-4" />
-          <span>Back to Dashboard</span>
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link to="/" className="inline-flex items-center space-x-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Home className="w-4 h-4" />
+            <span>Back to Dashboard</span>
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Hero Section */}
