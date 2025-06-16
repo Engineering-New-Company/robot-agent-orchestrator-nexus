@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
 
-## Project info
+# Robot Agent - Advanced Robotics Platform
 
-**URL**: https://lovable.dev/projects/3d95c2d8-cf5b-4b08-911c-0abeee4c7570
+An AI-powered robotics development and deployment platform built with cutting-edge technologies for autonomous systems, computer vision, and intelligent manufacturing.
 
-## How can I edit this code?
+## 🤖 Project Overview
 
-There are several ways of editing your application.
+Robot Agent provides a comprehensive suite of tools for developing, training, and deploying AI-driven robotics applications. From deep reinforcement learning to real-time computer vision, our platform accelerates robotics innovation from research to production.
 
-**Use Lovable**
+### Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3d95c2d8-cf5b-4b08-911c-0abeee4c7570) and start prompting.
+- **Deep Reinforcement Learning**: Advanced DRL algorithms (PPO, SAC, DDPG) for autonomous robotics agents
+- **Computer Vision Pipeline**: Real-time visual processing with object detection and pose tracking
+- **Hugging Face Integration**: Access to 100,000+ AI models with one-click deployment
+- **Multi-Framework Support**: Seamless integration with PyTorch, TensorFlow, and robotics frameworks
+- **IIoT Connectivity**: Industrial-grade C++ pipelines for real-time system integration
+- **Production Deployment**: Enterprise-grade deployment with monitoring and failover systems
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd robot-agent
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Technology Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is built with modern web technologies:
 
-**Use GitHub Codespaces**
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Framework**: shadcn/ui, Tailwind CSS
+- **AI/ML**: Hugging Face Transformers, PyTorch, TensorFlow
+- **Robotics**: Computer Vision (OpenCV), Real-time Processing
+- **State Management**: TanStack Query
+- **Build Tool**: Vite with hot reload
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Application Structure
 
-## What technologies are used for this project?
+- `/src/pages` - Main application pages and routing
+- `/src/components` - Reusable UI components and robotics modules
+- `/src/services` - AI frameworks and external API integrations
+- `/src/hooks` - Custom React hooks for robotics functionality
+- `/src/types` - TypeScript type definitions
 
-This project is built with:
+## 🔧 Development
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Available Scripts
 
-## How can I deploy this project?
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
 
-Simply open [Lovable](https://lovable.dev/projects/3d95c2d8-cf5b-4b08-911c-0abeee4c7570) and click on Share -> Publish.
+### Development Workflow
 
-## Can I connect a custom domain to my Lovable project?
+1. Make changes to the codebase
+2. View live updates in the development server
+3. Test robotics modules and AI integrations
+4. Deploy to production when ready
 
-Yes, you can!
+## 🌐 Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Lovable Platform (Recommended)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Open your project in [Lovable](https://lovable.dev)
+2. Click Share → Publish for instant deployment
+3. Connect custom domains via Project → Settings → Domains
+
+### Self-Hosting
+
+The codebase is standard React/Vite and can be deployed to any static hosting service:
+
+- Vercel, Netlify, GitHub Pages
+- AWS S3 + CloudFront
+- Your own infrastructure
+
+## 🤝 Contributing
+
+Robot Agent is built for the robotics community. Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🙏 Acknowledgments
+
+**Built with [Lovable](https://lovable.dev)** - The AI-powered web development platform that made rapid prototyping and iteration possible.
+
+Special thanks to the open-source robotics and AI communities for the foundational technologies that power this platform.
+
+---
+
+**Project URL**: https://lovable.dev/projects/3d95c2d8-cf5b-4b08-911c-0abeee4c7570
+
+For support and collaboration, join our development community!
