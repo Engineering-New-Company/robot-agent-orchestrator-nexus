@@ -20,8 +20,10 @@ import {
   GitBranch,
   ChevronRight,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Home
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   const coreFeatures = [
@@ -104,32 +106,40 @@ const Features = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-slate-900 dark:text-white">
+      {/* Navigation */}
+      <div className="container mx-auto px-6 py-4">
+        <Link to="/" className="inline-flex items-center space-x-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+          <Home className="w-4 h-4" />
+          <span>Back to Dashboard</span>
+        </Link>
+      </div>
+
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
               <Cpu className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-6">
             Advanced Robotics Platform
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8">
             The most comprehensive platform for AI-driven robotics development, deployment, and management. 
             From research to production, accelerate your robotics projects with cutting-edge tools.
           </p>
-          <div className="flex items-center justify-center space-x-4">
-            <Badge className="bg-green-600/20 text-green-400 border-green-500">
+          <div className="flex items-center justify-center space-x-4 flex-wrap gap-y-2">
+            <Badge className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-300 dark:border-green-600">
               <CheckCircle className="w-3 h-3 mr-1" />
               Production Ready
             </Badge>
-            <Badge className="bg-blue-600/20 text-blue-400 border-blue-500">
+            <Badge className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-300 dark:border-blue-600">
               <Zap className="w-3 h-3 mr-1" />
               Real-time Processing
             </Badge>
-            <Badge className="bg-purple-600/20 text-purple-400 border-purple-500">
+            <Badge className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-600">
               <Brain className="w-3 h-3 mr-1" />
               AI-Powered
             </Badge>
@@ -141,26 +151,26 @@ const Features = () => {
           {coreFeatures.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:border-slate-600 transition-all duration-300">
+              <Card key={index} className="bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-lg">
                 <CardHeader>
                   <div className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center`}>
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-md`}>
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-white">{feature.title}</CardTitle>
+                      <CardTitle className="text-xl text-slate-900 dark:text-white">{feature.title}</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-slate-300 text-base mb-4">
+                  <CardDescription className="text-slate-600 dark:text-slate-300 text-base mb-4">
                     {feature.description}
                   </CardDescription>
                   <div className="space-y-2">
                     {feature.highlights.map((highlight, i) => (
                       <div key={i} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-400" />
-                        <span className="text-sm text-slate-400">{highlight}</span>
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <span className="text-sm text-slate-500 dark:text-slate-400">{highlight}</span>
                       </div>
                     ))}
                   </div>
@@ -172,20 +182,20 @@ const Features = () => {
 
         {/* Advanced Capabilities */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">
             Advanced Capabilities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advancedCapabilities.map((capability, index) => {
               const IconComponent = capability.icon;
               return (
-                <Card key={index} className="bg-slate-800/30 border-slate-700 backdrop-blur-sm hover:bg-slate-800/50 transition-all duration-300">
+                <Card key={index} className="bg-white/30 dark:bg-slate-800/30 border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all duration-300">
                   <CardHeader className="pb-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-slate-600 to-slate-500 flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-slate-400 to-slate-500 dark:from-slate-600 dark:to-slate-500 flex items-center justify-center mb-3 shadow-sm">
                       <IconComponent className="w-5 h-5 text-white" />
                     </div>
-                    <CardTitle className="text-lg text-white">{capability.title}</CardTitle>
-                    <CardDescription className="text-slate-400 text-sm">
+                    <CardTitle className="text-lg text-slate-900 dark:text-white">{capability.title}</CardTitle>
+                    <CardDescription className="text-slate-600 dark:text-slate-400 text-sm">
                       {capability.description}
                     </CardDescription>
                   </CardHeader>
@@ -193,8 +203,8 @@ const Features = () => {
                     <div className="space-y-1">
                       {capability.features.map((feature, i) => (
                         <div key={i} className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
-                          <span className="text-xs text-slate-500">{feature}</span>
+                          <div className="w-1 h-1 bg-cyan-500 rounded-full"></div>
+                          <span className="text-xs text-slate-500 dark:text-slate-500">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -207,20 +217,20 @@ const Features = () => {
 
         {/* Use Cases */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">
             Real-World Applications
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => {
               const IconComponent = useCase.icon;
               return (
-                <Card key={index} className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+                <Card key={index} className="bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 backdrop-blur-sm shadow-lg">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mb-4 shadow-md">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl text-white">{useCase.title}</CardTitle>
-                    <CardDescription className="text-slate-300">
+                    <CardTitle className="text-xl text-slate-900 dark:text-white">{useCase.title}</CardTitle>
+                    <CardDescription className="text-slate-600 dark:text-slate-300">
                       {useCase.description}
                     </CardDescription>
                   </CardHeader>
@@ -228,8 +238,8 @@ const Features = () => {
                     <div className="space-y-3">
                       {useCase.metrics.map((metric, i) => (
                         <div key={i} className="flex items-center space-x-2">
-                          <ArrowRight className="w-4 h-4 text-cyan-400" />
-                          <span className="text-sm text-slate-400">{metric}</span>
+                          <ArrowRight className="w-4 h-4 text-cyan-500" />
+                          <span className="text-sm text-slate-500 dark:text-slate-400">{metric}</span>
                         </div>
                       ))}
                     </div>
@@ -241,13 +251,13 @@ const Features = () => {
         </div>
 
         {/* Technology Stack */}
-        <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+        <Card className="bg-white/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 backdrop-blur-sm shadow-lg mb-16">
           <CardHeader>
-            <CardTitle className="text-2xl text-center text-white flex items-center justify-center space-x-2">
-              <GitBranch className="w-6 h-6 text-cyan-400" />
+            <CardTitle className="text-2xl text-center text-slate-900 dark:text-white flex items-center justify-center space-x-2">
+              <GitBranch className="w-6 h-6 text-cyan-500" />
               <span>Technology Stack</span>
             </CardTitle>
-            <CardDescription className="text-center text-slate-300">
+            <CardDescription className="text-center text-slate-600 dark:text-slate-300">
               Built on industry-leading frameworks and protocols
             </CardDescription>
           </CardHeader>
@@ -257,8 +267,8 @@ const Features = () => {
                 "PyTorch", "TensorFlow", "Hugging Face", "OpenCV", "ROS2", "C++", 
                 "CUDA", "Docker", "Kubernetes", "WebRTC", "OPC-UA", "MQTT"
               ].map((tech, index) => (
-                <div key={index} className="text-center p-3 bg-slate-700/50 rounded-lg border border-slate-600">
-                  <span className="text-sm font-medium text-slate-300">{tech}</span>
+                <div key={index} className="text-center p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{tech}</span>
                 </div>
               ))}
             </div>
@@ -266,11 +276,13 @@ const Features = () => {
         </Card>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-lg px-8 py-3">
-            Get Started Now
-            <ChevronRight className="w-5 h-5 ml-2" />
-          </Button>
+        <div className="text-center">
+          <Link to="/">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 dark:from-blue-500 dark:to-cyan-500 dark:hover:from-blue-600 dark:hover:to-cyan-600 text-white text-lg px-8 py-3 shadow-lg">
+              Explore Platform
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
